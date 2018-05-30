@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: test
-Implementation-Version: 1.0-SNAPSHOT
-Built-By: jcgueriaud
-Created-By: Apache Maven 3.5.2
-Build-Jdk: 1.8.0_171
-
