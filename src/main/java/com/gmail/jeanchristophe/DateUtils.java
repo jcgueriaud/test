@@ -1,14 +1,12 @@
-package lu.lusis.etimesheet.ui.util;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+package com.gmail.jeanchristophe;
 
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.datepicker.DatePicker.DatePickerI18n;
-import lu.lusis.etimesheet.ui.AppUI;
+
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Classe utilitaire pour la gestion des fichiers
@@ -40,7 +38,7 @@ public class DateUtils {
 	 * @param c the component to process
 	 */
 	public static void initDatePickerI18n(DatePicker c){
-		c.setLocale(AppUI.DEFAULT_LOCALE);
+		c.setLocale(Locale.FRANCE);
 		c.setI18n(new DatePickerI18n()
         		.setCalendar("Calendrier")
         		.setCancel("Annuler")
@@ -53,22 +51,4 @@ public class DateUtils {
         		.setWeekdaysShort(WEEKDAYS_SHORT));
 	}
 
-	/*public static String getDateFormattee(LocalDate date){
-		return date.format(dateFormatter);
-	}*/
-	
-	/**
-	 * Indicates if the supplied date is in the given period.
-	 * @param period
-	 * @param date
-	 * @return
-	 */
-	public static boolean isInPeridod(LocalDate period, LocalDate date) {
-		if(period == null || date == null) {
-			return false;
-		}
-		
-		return period.getMonthValue() == date.getMonthValue()
-				&& period.getYear() == date.getYear();
-	}
 }

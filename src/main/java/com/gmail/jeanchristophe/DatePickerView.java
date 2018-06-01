@@ -30,11 +30,11 @@ public class DatePickerView extends VerticalLayout {
         LocalDate date30May = LocalDate.of(2018, Month.MAY, 30);
         LocalDate date06May = LocalDate.of(2018, Month.MAY, 6);
 
-        dateDialog.setLocale(Locale.FRANCE);
+        DateUtils.initDatePickerI18n(dateDialog);
         dateDialog.setValue(date06May);
 
 
-        dateDialogToday.setLocale(Locale.FRANCE);
+        DateUtils.initDatePickerI18n(dateDialogToday);
         dateDialogToday.setValue(date30May);
 
         add(dateDialog,dateDialogToday);
