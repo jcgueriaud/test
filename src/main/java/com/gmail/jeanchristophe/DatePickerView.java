@@ -25,6 +25,9 @@ public class DatePickerView extends VerticalLayout {
 
     private DatePicker dateDialog = new DatePicker("date Dialog");
     private DatePicker dateDialogToday = new DatePicker("date Dialog Today");
+    private Button openDialogButton = new Button("Open dialog");
+    private Dialog dialog = new Dialog();
+
 
     public DatePickerView() {
         LocalDate date30May = LocalDate.of(2018, Month.MAY, 30);
@@ -36,8 +39,10 @@ public class DatePickerView extends VerticalLayout {
 
         DateUtils.initDatePickerI18n(dateDialogToday);
         dateDialogToday.setValue(date30May);
+        openDialogButton.addClickListener(event -> dialog.open());
+        add(dateDialog, openDialogButton);
 
-        add(dateDialog,dateDialogToday);
+        dialog.add(dateDialogToday);
 
 
 
