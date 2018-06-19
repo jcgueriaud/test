@@ -1,0 +1,37 @@
+<!-- Dependency resources -->
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/vaadin-text-field/src/vaadin-text-field.html">
+
+<!-- Defines the example-template element -->
+<dom-module id="coordinates-field">
+    <template>
+
+        <vaadin-text-field id="latitude" label="Latitude"
+                           value={{latitude}}></vaadin-text-field>
+
+        <vaadin-text-field id="longitude" label="Longitude"
+                           value={{longitude}}></vaadin-text-field>
+    </template>
+
+    <script>
+        class CoordinatesField extends Polymer.Element {
+            static get is() {
+                return 'coordinates-field'
+            }
+
+            static get properties() {
+                return {
+                    latitude: {
+                        type: Number,
+                        notify: true
+                    },
+                    longitude: {
+                        type: Number,
+                        notify: true
+                    }
+                };
+            }
+        }
+        customElements.define(CoordinatesField.is, CoordinatesField);
+    </script>
+</dom-module>
