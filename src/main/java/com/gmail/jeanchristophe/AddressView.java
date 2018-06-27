@@ -5,6 +5,7 @@ import com.gmail.jeanchristophe.component.CoordinatesField;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.page.BodySize;
@@ -28,9 +29,11 @@ public class AddressView extends VerticalLayout {
     private Button readButton = new Button("READ DEFAULT BEAN");
     private Button writeButton = new Button("WRITE");
 
+
     private Div beanWritten = new Div();
 
     private Address address = new Address("test", 42.0,6.0);
+
 
     public AddressView() {
         binder.forField(addressField).bind("address");
@@ -40,9 +43,10 @@ public class AddressView extends VerticalLayout {
 
         readButton.addClickListener(this::resetAndReadBean);
         writeButton.addClickListener(this::writeBean);
-        setClassName("main-layout");
-    }
 
+        setClassName("main-layout");
+        binder.readBean(new Address("test", 43.0,7.0));
+    }
 
     private void resetAndReadBean(ClickEvent<Button> buttonClickEvent) {
         address = new Address("test", 42.0,6.0);

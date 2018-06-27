@@ -1,19 +1,30 @@
 <!-- Dependency resources -->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/vaadin-text-field/src/vaadin-text-field.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/vaadin-button/src/vaadin-button.html">
+<link rel="import" href="../bower_components/vaadin-ordered-layout/src/vaadin-vertical-layout.html">
+<link rel="import" href="./component/coordinates-field.html">
 
 <!-- Defines the example-template element -->
-<dom-module id="example-template">
+<dom-module id="address-html-view">
     <template>
-        <span>[[value]]</span>
+        <vaadin-vertical-layout>
+            <vaadin-text-field id="address" label="Address"></vaadin-text-field>
+            <coordinates-field id="coordinates"></coordinates-field>
+            <vaadin-button id="readButton">READ DEFAULT BEAN</vaadin-button>
+            <vaadin-button id="writeButton">WRITE</vaadin-button>
+            <div id="beanWritten"></div>
+
+        </vaadin-vertical-layout>
     </template>
 
-    <!-- Polymer boilerplate to register the example-template element -->
     <script>
-        class ExampleTemplate extends Polymer.Element {
+        class AddressHtmlView extends Polymer.Element {
             static get is() {
-                return 'example-template'
+                return 'address-html-view'
             }
         }
-        customElements.define(ExampleTemplate.is, ExampleTemplate);
+        customElements.define(AddressHtmlView.is, AddressHtmlView);
     </script>
 </dom-module>

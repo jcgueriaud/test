@@ -44,11 +44,15 @@ public class CoordinatesField extends AbstractField<CoordinatesField,MyCoordinat
     }
 
     private void propertyUpdated(PropertyChangeEvent event) {
+
         Element element = getElement();
 
         double latitude = element.getProperty("latitude", 0.0);
         double longitude = element.getProperty("longitude", 0.0);
+
+        System.out.println("propertyUpdated (" + latitude + ", "+longitude +")");
         MyCoordinates value = new MyCoordinates(latitude,longitude);
         setModelValue(value, event.isUserOriginated());
     }
+
 }
