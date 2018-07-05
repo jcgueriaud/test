@@ -1,0 +1,45 @@
+<!-- Dependency resources -->
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/vaadin-dialog/src/vaadin-dialog.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/vaadin-button/src/vaadin-button.html">
+<link rel="import"
+      href="../bower_components/google-map/google-map.html">
+<link rel="import"
+      href="../bower_components/google-map/google-map-marker.html">
+
+<!-- Defines the example-template element -->
+<dom-module id="popup-map-view">
+
+    <template>
+        <vaadin-dialog id="dialog">
+            <template> <style>
+
+                google-map {
+                    height: 150px;
+                }
+            </style>
+                <div>This simple dialog will close by pressing the Esc key,</div>
+                <div> or by a mouse click anywhere outside the dialog area</div>
+                <google-map
+                        id="googleMap"
+                        latitude="42" longitude="6"
+                        colspan="2"><!-- api-key="api-key" -->
+
+                    <google-map-marker latitude="42" longitude="6">Votre position</google-map-marker>
+                </google-map>
+
+            </template>
+        </vaadin-dialog>
+        <vaadin-button id="button">Show dialog</vaadin-button>
+        <vaadin-button id="button2">Show dialog2</vaadin-button>
+    </template>
+    <script>
+        class PopupMapView extends Polymer.Element {
+            static get is() {
+                return 'popup-map-view'
+            }
+        }
+        customElements.define(PopupMapView.is, PopupMapView);
+    </script>
+</dom-module>

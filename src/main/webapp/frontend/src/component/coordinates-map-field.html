@@ -1,0 +1,36 @@
+<!-- Dependency resources -->
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/vaadin-text-field/src/vaadin-text-field.html">
+<link rel="import"
+      href="../../bower_components/google-map/google-map.html">
+<link rel="import"
+      href="../../bower_components/google-map/google-map-marker.html">
+
+<!-- Defines the example-template element -->
+<dom-module id="coordinates-map-field">
+    <template>
+        <style>
+
+            google-map {
+                height: 150px;
+            }
+        </style>
+        <google-map
+                id="googleMap"
+                latitude="42" longitude="6"
+                colspan="2"><!-- api-key="api-key"-->
+
+            <google-map-marker latitude="42" longitude="6">Votre position</google-map-marker>
+        </google-map>
+    </template>
+
+    <script>
+        class CoordinatesMapField extends Polymer.Element {
+            static get is() {
+                return 'coordinates-map-field'
+            }
+
+        }
+        customElements.define(CoordinatesMapField.is, CoordinatesMapField);
+    </script>
+</dom-module>

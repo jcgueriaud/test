@@ -69,6 +69,16 @@
             <artifactId>vaadin-core</artifactId>
             <version>${vaadin.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.webjars.bowergithub.googlewebcomponents</groupId>
+            <artifactId>google-map</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars.bowergithub.unicef-polymer</groupId>
+            <artifactId>etools-leaflet-map</artifactId>
+            <version>2.0.1</version>
+        </dependency>
 
         <!-- Added to provide logging output as Flow uses -->
         <!-- the unbound SLF4J no-operation (NOP) logger implementation -->
